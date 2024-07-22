@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/28e1854dacfc4d0d91739aeb5b409392/artifacts
+end_time: 1721561439289
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 28e1854dacfc4d0d91739aeb5b409392
+run_name: adventurous-koi-740
+run_uuid: 28e1854dacfc4d0d91739aeb5b409392
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721561439278
+status: 4
+tags: []
+user_id: abbasraza

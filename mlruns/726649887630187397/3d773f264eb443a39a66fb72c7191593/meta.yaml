@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/726649887630187397/3d773f264eb443a39a66fb72c7191593/artifacts
+end_time: 1721632451153
+entry_point_name: ''
+experiment_id: '726649887630187397'
+lifecycle_stage: active
+run_id: 3d773f264eb443a39a66fb72c7191593
+run_name: Example Demo
+run_uuid: 3d773f264eb443a39a66fb72c7191593
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721632451139
+status: 3
+tags: []
+user_id: abbasraza

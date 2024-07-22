@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/726649887630187397/0285db588e9540d1ab0e7ca2e5703430/artifacts
+end_time: 1721592513477
+entry_point_name: ''
+experiment_id: '726649887630187397'
+lifecycle_stage: active
+run_id: 0285db588e9540d1ab0e7ca2e5703430
+run_name: smiling-elk-684
+run_uuid: 0285db588e9540d1ab0e7ca2e5703430
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721592513466
+status: 3
+tags: []
+user_id: abbasraza

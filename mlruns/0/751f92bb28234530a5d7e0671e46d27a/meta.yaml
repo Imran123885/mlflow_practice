@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/751f92bb28234530a5d7e0671e46d27a/artifacts
+end_time: 1721561514003
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 751f92bb28234530a5d7e0671e46d27a
+run_name: example_demo
+run_uuid: 751f92bb28234530a5d7e0671e46d27a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721561513992
+status: 4
+tags: []
+user_id: abbasraza

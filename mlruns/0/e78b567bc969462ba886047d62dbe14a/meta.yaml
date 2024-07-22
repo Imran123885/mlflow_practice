@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/e78b567bc969462ba886047d62dbe14a/artifacts
+end_time: 1721561154108
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e78b567bc969462ba886047d62dbe14a
+run_name: bedecked-steed-357
+run_uuid: e78b567bc969462ba886047d62dbe14a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721561154099
+status: 4
+tags: []
+user_id: abbasraza
