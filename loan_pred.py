@@ -1,3 +1,4 @@
+# Importing the required packages
 import pandas as pd
 import numpy as np
 from sklearn.linear_model import LogisticRegression
@@ -11,41 +12,51 @@ import mlflow
 import os
 
 # mlflow.set_tracking_uri("http://192.168.0.1:5000")
-# mlflow.set_tracking_uri("https://localhost:5000")
+# mlflow.set_tracking_uri("http://0.0.0.0:5001/")
 
+# load the dataset
 dataset = pd.read_csv("train.csv")
 numerical_cols = dataset.select_dtypes(include=['int64','float64']).columns.tolist()
 categorical_cols = dataset.select_dtypes(include=['object']).columns.tolist()
 categorical_cols.remove('Loan_Status')
 categorical_cols.remove('Loan_ID')
 
+# Filling categorical columns with mode
 for col in categorical_cols:
     dataset[col].fillna(dataset[col].mode()[0], inplace=True)
 
+# Filling Numerical columns with median
 for col in numerical_cols:
     dataset[col].fillna(dataset[col].median(), inplace=True)
 
+# Take care of outliers
 dataset[numerical_cols] = dataset[numerical_cols].apply(lambda x: x.clip(*x.quantile([0.05, 0.95])))
 
+# Log Transforamtion & Domain Processing
 dataset['LoanAmount'] = np.log(dataset['LoanAmount']).copy()
 dataset['TotalIncome'] = dataset['ApplicantIncome'] + dataset['CoapplicantIncome']
 dataset['TotalIncome'] = np.log(dataset['TotalIncome']).copy()
 
 
+# Dropping ApplicantIncome and CoapplicantIncome
 dataset = dataset.drop(columns=['ApplicantIncome','CoapplicantIncome'])
 
+# Label encoding categorical variables
 for col in categorical_cols:
     le = LabelEncoder()
     dataset[col] = le.fit_transform(dataset[col])
 
+#Encode the target columns
 dataset['Loan_Status'] = le.fit_transform(dataset['Loan_Status'])
 
+# Train test split
 X = dataset.drop(columns=['Loan_Status', 'Loan_ID'])
 y = dataset.Loan_Status
 RANDOM_SEED = 6
 
 X_train, X_test, y_train, y_test = train_test_split(X,y, test_size =0.3, random_state = RANDOM_SEED)
 
+# RandomForest
 rf = RandomForestClassifier(random_state=RANDOM_SEED)
 param_grid_forest = {
     'n_estimators': [200,400, 700],
@@ -64,6 +75,7 @@ grid_forest = GridSearchCV(
     )
 model_forest = grid_forest.fit(X_train, y_train)
 
+#Logistic Regression
 
 lr = LogisticRegression(random_state=RANDOM_SEED)
 param_grid_log = {
@@ -82,6 +94,7 @@ grid_log = GridSearchCV(
     )
 model_log = grid_log.fit(X_train, y_train)
 
+#Decision Tree
 
 dt = DecisionTreeClassifier(
     random_state=RANDOM_SEED
@@ -104,6 +117,7 @@ model_tree = grid_tree.fit(X_train, y_train)
 
 mlflow.set_experiment("Loan_prediction")
 
+# Model evelaution metrics
 def eval_metrics(actual, pred):
     accuracy = metrics.accuracy_score(actual, pred)
     f1 = metrics.f1_score(actual, pred, pos_label=1)
@@ -128,7 +142,7 @@ def eval_metrics(actual, pred):
 def mlflow_logging(model, X, y, name):
     
      with mlflow.start_run() as run:
-        mlflow.set_tracking_uri("https://localhost:5000")
+        mlflow.set_tracking_uri("http://0.0.0.0:5001/")
         run_id = run.info.run_id
         mlflow.set_tag("run_id", run_id)      
         pred = model.predict(X)

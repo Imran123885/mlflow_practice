@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/285811325564181008/57d6e16194f14f2da8a73c649a743aeb/artifacts
+end_time: 1721637046302
+entry_point_name: ''
+experiment_id: '285811325564181008'
+lifecycle_stage: active
+run_id: 57d6e16194f14f2da8a73c649a743aeb
+run_name: sassy-wren-583
+run_uuid: 57d6e16194f14f2da8a73c649a743aeb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721636997913
+status: 4
+tags: []
+user_id: abbasraza

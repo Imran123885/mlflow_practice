@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/285811325564181008/5324d7571152421a8098c7741de24aad/artifacts
+end_time: 1721637200917
+entry_point_name: ''
+experiment_id: '285811325564181008'
+lifecycle_stage: active
+run_id: 5324d7571152421a8098c7741de24aad
+run_name: funny-penguin-450
+run_uuid: 5324d7571152421a8098c7741de24aad
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721637057347
+status: 4
+tags: []
+user_id: abbasraza
