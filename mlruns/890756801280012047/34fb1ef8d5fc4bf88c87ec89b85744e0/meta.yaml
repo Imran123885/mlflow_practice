@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/890756801280012047/34fb1ef8d5fc4bf88c87ec89b85744e0/artifacts
+end_time: 1721634623582
+entry_point_name: ''
+experiment_id: '890756801280012047'
+lifecycle_stage: active
+run_id: 34fb1ef8d5fc4bf88c87ec89b85744e0
+run_name: fearless-koi-393
+run_uuid: 34fb1ef8d5fc4bf88c87ec89b85744e0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721634621753
+status: 3
+tags: []
+user_id: abbasraza

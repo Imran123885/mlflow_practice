@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/890756801280012047/fb67fc89f16e4cad9bbc01b54986fa31/artifacts
+end_time: 1721634431118
+entry_point_name: ''
+experiment_id: '890756801280012047'
+lifecycle_stage: active
+run_id: fb67fc89f16e4cad9bbc01b54986fa31
+run_name: industrious-grub-770
+run_uuid: fb67fc89f16e4cad9bbc01b54986fa31
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721634429303
+status: 3
+tags: []
+user_id: abbasraza

@@ -17,7 +17,10 @@ def load_data():
         raise e
 
 def eval_function(ground_truth, preds):
-    rmse = np.sqrt(mean_squared_error(ground_truth, preds))
+    rmse = mean_squared_error(ground_truth, preds, squared=False)
+    mae = mean_absolute_error(ground_truth, preds)
+    r2 = r2_score(ground_truth, preds)
+    return rmse, mae, r2
 
 def main(alpha, l1_ratio):
     df = load_data()
@@ -32,19 +35,21 @@ def main(alpha, l1_ratio):
     with mlflow.start_run():
         mlflow.set_tag("version","1.0.0")
         mlflow.log_param("alpha",alpha)
-        mlflow.log_param("l1_ratio",l1_ratio) # key, value
+        mlflow.log_param("l1_ratio",l1_ratio) 
 
         model = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=6)
         model.fit(X_train, y_train)
         y_pred = model.predict(X_test)
+        rmse,mae,r2 = eval_function(y_test, y_pred)
 
-
-        metric = eval(p1 = inp1, p2 = inp2)
-        mlflow.log_metric("Eval_Metric",metric)
-        os.makedirs("dummy", exist_ok=True)
-        with open("dummy/example.txt", "wt") as f:
-            f.write(f"Artifact created at {time.asctime()}")
-        mlflow.log_artifacts("dummy")
+        mlflow.log_metric("rmse",rmse)
+        mlflow.log_metric("mae",mae)
+        mlflow.log_metric("r2",r2)
+        mlflow.sklearn.log_model(model, 'trained_model')
+        # os.makedirs("dummy", exist_ok=True)
+        # with open("dummy/example.txt", "wt") as f:
+        #     f.write(f"Artifact created at {time.asctime()}")
+        # mlflow.log_artifacts("dummy")
 
 
 if __name__ == '__main__':
@@ -52,5 +57,4 @@ if __name__ == '__main__':
     args.add_argument("--alpha","-a", type=float, default=0.2)
     args.add_argument("--l1_ratio","-l1", type=float, default=0.3)
     parsed_args = args.parse_args()
-    # parsed_args.param1
     main(parsed_args.alpha, parsed_args.l1_ratio)

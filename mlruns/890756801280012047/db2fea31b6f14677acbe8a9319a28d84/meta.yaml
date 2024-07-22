@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/890756801280012047/db2fea31b6f14677acbe8a9319a28d84/artifacts
+end_time: 1721634394941
+entry_point_name: ''
+experiment_id: '890756801280012047'
+lifecycle_stage: active
+run_id: db2fea31b6f14677acbe8a9319a28d84
+run_name: lyrical-mare-33
+run_uuid: db2fea31b6f14677acbe8a9319a28d84
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721634394924
+status: 4
+tags: []
+user_id: abbasraza

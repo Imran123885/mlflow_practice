@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/abbasraza/Desktop/Manifold-AI-learning/MLFlow-ML-Expirements/mlruns/285811325564181008/fda40e8f968c4dc1bda760e325c04650/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '285811325564181008'
+lifecycle_stage: active
+run_id: fda40e8f968c4dc1bda760e325c04650
+run_name: caring-stag-876
+run_uuid: fda40e8f968c4dc1bda760e325c04650
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1721635913505
+status: 1
+tags: []
+user_id: abbasraza
